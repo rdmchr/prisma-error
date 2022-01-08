@@ -1,0 +1,30 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://postgres:postgres@localhost:5432/testdb"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator nexusPrisma {
+  provider = "nexus-prisma"
+}
+
+model Recipe {
+  id          String       @id @default(cuid())
+  name        String
+  description String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @default(now())
+  ingredients Ingredient[]
+}
+
+model Ingredient {
+  id       String  @id @default(cuid())
+  name     String
+  unit     String?
+  amount   Int
+  recipe   Recipe  @relation(fields: [recipeId], references: [id])
+  recipeId String
+}

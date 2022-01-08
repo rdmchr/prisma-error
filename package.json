@@ -1,0 +1,26 @@
+{
+  "name": "minapollo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "generate": "prisma generate"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "prisma": "^3.7.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.6",
+    "@prisma/client": "^3.7.0",
+    "apollo-server-express": "^3.6.1",
+    "express": "^4.17.2",
+    "nexus": "^1.1.0",
+    "nexus-prisma": "^0.35.0",
+    "graphql": "^15.8.0"
+  }
+}
