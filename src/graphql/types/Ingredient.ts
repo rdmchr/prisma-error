@@ -65,6 +65,11 @@ export const ingredientMutation = extendType({
             name: args.name,
             unit: args.unit,
             amount: args.amount,
+            recipe: {
+              connect: {
+                id: args.recipe,
+              },
+            },
           },
         });
       },

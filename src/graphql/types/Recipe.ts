@@ -55,6 +55,10 @@ export const recipeMutation = extendType({
           throw new Error("Name, description and ingredients are required");
         }
 
+        if (ingredients.length === 0) {
+          throw new Error("At least one ingredient is required");
+        }
+
         return ctx.prisma.recipe.create({
           data: {
             name,
